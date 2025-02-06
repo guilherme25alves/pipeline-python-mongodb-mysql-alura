@@ -1,0 +1,78 @@
+# Anotações:
+
+    Resolvendo problema de incompatibilidade do Pandas com Numpy
+
+    https://cursos.alura.com.br/forum/topico-erro-no-python-ao-importar-biblioteca-pandas-444780
+
+    "
+    Realmente o problema está na incompatibilidade da versão do pandas com a versão do numpy que está usando. Nesse caso, preciso utilizar uma versão do numpy que seja compatível com o pandas 2.0.3. Caso a versão do numpy seja muito antiga ou muito atual, pode trazer problemas semelhantes a essa por conter atualizações diferentes em cada uma.
+
+    Então sugiro que ative o seu ambiente virtual:
+
+    source venv/bin/activate
+
+    Desinstale o NumPy com o comando:
+
+    pip uninstall numpy
+
+    Instale a versão para teste:
+
+    pip install numpy==1.23.5
+
+    Agora verifique a instalação:
+
+    pip show numpy
+
+    Feito isso, faça o teste executando o código e observe se funciona como esperado. E caso não dê, retorne nos contando o que aconteceu para podermos buscar outras soluções.
+    "
+
+    Texto retirado do artigo
+
+    
+    
+    Criação de Usuário MYSQL 
+
+    entrando no terminal do MYSQL: 
+
+        sudo mysql
+
+    criando novo usuário:
+
+        CREATE USER 'nome-usuario'@'host-de-acesso' IDENTIFIED BY 'senha';
+
+    exemplo de comando: 
+
+        CREATE USER 'gui'@'localhost' IDENTIFIED BY 'admin';
+
+    comando para fornecer as permissões de manipulação no banco de dados para o usuário: 
+
+        GRANT ALL PRIVILEGES ON *.* TO 'nome-usuario'@'host-de-acesso';
+
+    exemplo de comando: 
+
+        GRANT ALL PRIVILEGES ON *.* TO 'gui'@'localhost';
+
+    saindo do terminal mysql no Ubuntu:
+
+        exit
+
+
+    PYTHON ENV: Para usar as variáveis de ambiente do arquivo .env no Python, 
+    necessário download da biblioteca python-dotenv 
+
+        ativando venv:
+
+            source .venv/bin/activate 
+
+        download python-dotenv:
+
+            pip install python-dotenv
+
+        depois disso, necessário adicionar ao código:
+
+            import os 
+            from dotenv import load_dotenv
+
+            # chamar funçao que carrega variáveis do arquivo .env no ambiente de trabalho:
+
+                load_dotenv()
